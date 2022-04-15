@@ -1,0 +1,45 @@
+<nav>
+    <mat-toolbar class="upper-nav">
+        <mat-toolbar-row class="nav-row">
+            <img class='logo' src="../../../assets/Group_1.png" alt="">
+                <form>
+                    <mat-icon class="icon">search</mat-icon>
+                        <mat-form-field hideRequiredMarker appearance="legacy">
+                            <mat-label>Search</mat-label>
+                            <input required type="text" placeholder="search" matInput
+                            [formControl]="SearchControl">
+                        </mat-form-field>
+                </form>
+                <mat-slide-toggle [(ngModel)]="isbright">
+                </mat-slide-toggle>
+        </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="lower-nav">
+    <mat-toolbar-row class="nav-row">
+        <div class="lower-row-left">
+        <button mat-button class="btns">Home</button>
+        <button mat-button class="btns">Bookmarks</button>
+        <button mat-button class="btns">Comics</button>
+        <button mat-button #button [matMenuTriggerFor]="belowMenu"
+        #menuTrigger="matMenuTrigger" 
+        (mouseenter)="buttonEnter(menuTrigger)" 
+        (mouseleave)="buttonLeave(menuTrigger, button)"
+        class="btns lang-btn">Language</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below" direction="down">
+            <span (mouseenter)="menuenter()"
+            (mouseleave)="menuLeave(menuTrigger, button)">
+                <button mat-menu-item class="lang-btns" >Arabic</button>
+                <button mat-menu-item class="lang-btns">English</button>
+            </span>
+        </mat-menu>
+        <button mat-button class="btns">Login</button>
+    </div>
+    <div class="lower-row-right">
+        <mat-icon class="icon">star</mat-icon>
+        <button mat-button>
+            Surprise Me!
+        </button>
+    </div>
+</mat-toolbar-row>
+</mat-toolbar>
+</nav>
