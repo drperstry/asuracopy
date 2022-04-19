@@ -8,6 +8,7 @@ import { FormControl, Validators } from '@angular/forms'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
+  smallmenu:boolean = false;
   enteredButton:boolean = false;
   isMatMenuOpen:boolean = false;
   prevButtonTrigger:any;
@@ -68,5 +69,8 @@ export class NavbarComponent implements OnInit {
       }
     }, 100)
   }
-
+  open_smallmenu(){
+    this.smallmenu = !this.smallmenu;
+    console.log('hello');
+  }
 }
